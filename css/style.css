@@ -14,6 +14,7 @@ body {
 .slajder {
     width: inherit;
     overflow: hidden;
+    display: none;
 }
 .slajder2 {
     width:10000px;
@@ -28,6 +29,9 @@ h1 {
     text-align: center;
     margin: 60px;
     font-size: 30px;
+}
+.correctAnswers {
+    display: none;
 }
 .answers {
     text-align: center;
@@ -65,7 +69,8 @@ h1 {
 .fullCircle {
     background-color: #fff;
 }
-.incorrect {
+
+.incorrect, .redCircle {
     background-color: red;
 }
 .correct {
@@ -84,19 +89,20 @@ p {
     color: #fff;
     font-size: 1.5em;
     text-align: center;
+    margin-top: 20px;
 }
 .button {
-    display: inline-block;
+    display: block;
     border: 1px solid #7a7174;
     border-radius: 10px;
     width:230px;
     height: 40px;
-    padding: 10px 0 0 50px;
+    padding: 5px 10px;
     color: #7a7174;
     font-size: 1.5em;
     cursor: pointer;
     text-decoration: none;
-    margin: 60px 0 0 320px;
+    margin: 60px 0 0 360px;
     transition: border 0.5s ease-in-out 0s;
 }
 .button:hover {

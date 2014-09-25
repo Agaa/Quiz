@@ -9,6 +9,13 @@
     <body>
         <header></header>
         <div class="wrapper">
+            <div class="hello-page">
+                <h1>Test oceniający poziom wiedzy</h1>
+                <p>Przed Tobą krótki quiz sprawdzający aktualny poziom wiedzy z danego zagadnienia.
+                    Test ma na celu jedynie przydzielenie najlepiej odpowiadającego poziomu kursu,
+                    a jego wyniki do niczego nie zobowiązują.
+                    <a class="button">Start</a>
+            </div>
             
             <script id="entry-template" type="text/x-handlebars-template">
              {{#questions}}
@@ -30,10 +37,10 @@
                 </ul>
             </div>
             <div id="finalScore">
-            <h1>Gratulacje! Ukonczyles gre.</h1>
+            <h1>Dziękujemy za wykonanie testu</h1>
             <p>Ilość zdobytych punktów: <span id="score"></span></p>
-            <a class="button" id="playAgain" href="#">Graj jeszcze raz</a>
-            <a class="button" id="" href="#">Następny poziom</a>
+            <p>Niebawem poinformujemy Cię mailowo <br>o poziomie kursu najlepiej dopasowanym
+                <br>do Twoich potrzeb.</p>
             </div>
         </div>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>

@@ -2,6 +2,18 @@ $(document).ready(function(){
     var source   = $("#entry-template").html();
     var template = Handlebars.compile(source);
 
+//    function Quiz(container) {
+//        this.container = container;
+//        
+//        this.current = 0;
+//    }
+
+    $('.button').on('click', function() {
+        $('.slajder').show();
+        $('.correctAnswers').show();
+        $('.hello-page').hide();
+    });
+    
     $('.slajder2').append(template(data));
     for (var i=0, len=data.questions.length; i<len; i++) {
         var circles = $('.circles');
@@ -24,14 +36,14 @@ $(document).ready(function(){
             nextQuestion();
         } else {
             $this.addClass('incorrect');
-            addCircle('emptyCircle');
+            addCircle('redCircle');
             nextQuestion();
         }
     });
     
     //dodaje zamalowane lub puste kółka w zależności od poprawności odpowiedzi
     function addCircle(className){
-         $('.circle:not(.fullCircle, .emptyCircle):first').addClass(className);
+         $('.circle:not(.fullCircle, .redCircle):first').addClass(className);
     }
 
     //przejście do kolejnego pytania
@@ -54,24 +66,12 @@ $(document).ready(function(){
             percentage = scores/len*100;
             $('span#score').append(scores + ' (' + parseInt(percentage) + '%)');
             $('#finalScore').fadeIn(2000);
+            
         }else{
             transition();
             nextAnswer();
         }
-    }
-    
-    $('#playAgain').on('click', function(){
-        var circle = $('.circle'),
-        answers = $('.answers li');
-        $('.content').css('left', '0');
-        $('#finalScore').hide();
-        circle.removeClass('fullCircle');
-        circle.removeClass('emptyCircle');
-        answers.removeClass('correct');
-        answers.removeClass('incorrect');
-        console.log(questionNumber);
-        var questionNumber = 0;
-    });
+    };
     
 });
 
